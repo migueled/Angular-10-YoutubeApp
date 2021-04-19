@@ -2,6 +2,16 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
 
+## Temas
+
+* Creación de una API KEY para accesar a los servicios de YouTube API v3a
+* Uso de la documentación de YouTube para obtener información de un canal
+* Obtener una lista de reproducción
+* Crear una página en la cual se pueda cargar los videos de forma paginada
+* Usar el Token de respuesta de la api de YouTube
+* Trabajar con tipado de datos
+* SweetAlert2
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
