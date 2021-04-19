@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { YoutubeService } from '../../services/youtube.service';
+import { YoutubeResponse } from '../../models/youtube.model';
 
 @Component({
   selector: 'app-home',
