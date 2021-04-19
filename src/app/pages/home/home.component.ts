@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { YoutubeService } from '../../services/youtube.service';
-import { YoutubeResponse } from '../../models/youtube.model';
+import { YoutubeResponse, Video } from '../../models/youtube.model';
 
 @Component({
   selector: 'app-home',
@@ -9,12 +9,16 @@ import { YoutubeResponse } from '../../models/youtube.model';
 })
 export class HomeComponent implements OnInit {
 
-  constructor( private youtubeservice : YoutubeService) { }
+    videos : Video[] = [];
 
-  ngOnInit(): void {
-    this.youtubeservice.getVideos().subscribe(
-      ( data ) => console.log(data)
-    );
-  }
+    constructor( private youtubeservice : YoutubeService) { }
+
+    ngOnInit(): void {
+        this.youtubeservice.getVideos().subscribe(
+            data => {
+              this.videos.push( ... data );
+            }
+        );
+    }
 
 }

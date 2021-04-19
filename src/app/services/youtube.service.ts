@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient , HttpParams } from '@angular/common/http';
 import { YoutubeResponse } from '../models/youtube.model';
 import { map } from 'rxjs/operators';
+
 @Injectable({
     providedIn: 'root'
 })
@@ -25,13 +26,13 @@ export class YoutubeService {
         .set( 'key' ,          this.apiKey );
 
         return this.http.get< YoutubeResponse >( url , { params } )
-        .pipe(
-            map(
-                data => {
-                    this.nextPageToken = data.nextPageToken;
-                    return data.items.map( video => video.snippet );
-                }
-            )
-        );
+            .pipe(
+                map(
+                    data => {
+                        this.nextPageToken = data.nextPageToken;
+                        return data.items.map( video => video.snippet );
+                    }
+                )
+            );
     }
 }
